@@ -1,6 +1,7 @@
 package me.jgy.springex.controller;
 
 import lombok.extern.log4j.Log4j2;
+import me.jgy.springex.dto.TodoDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,7 +25,8 @@ public class TodoController {
     }
 
     @PostMapping("/register")
-    public void registerPost() {
+    public void registerPost(TodoDTO todoDTO) {
         log.info("POST todo register..........");
+        log.info(todoDTO);
     }
 }

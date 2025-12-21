@@ -18,8 +18,13 @@
             <appender-ref ref="console"/>
         </logger>
 
+        <logger name="me.jgy.springex.mapper" level="TRACE" additivity="false">
+            <appender-ref ref="console"/>
+        </logger>
+
         <root level="INFO" additivity="false">
             <AppenderRef ref="console"/>
         </root>
+
     </loggers>
 </configuration>
