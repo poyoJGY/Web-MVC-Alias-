@@ -25,6 +25,7 @@
         <property name="formatters">
             <set>
                 <bean class="me.jgy.springex.controller.formatter.LocalDateFormatter"/>
+                <bean class="me.jgy.springex.controller.formatter.CheckboxFormatter"/>
             </set>
         </property>
     </bean>

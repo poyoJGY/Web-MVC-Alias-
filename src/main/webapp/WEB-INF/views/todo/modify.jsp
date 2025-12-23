@@ -120,13 +120,19 @@
                         }, false);
 
                         document.querySelector(".btn-primary").addEventListener("click", function (e) {
-                            self.location = "/todo/modify?tno=" +
-                            ${dto.tno}
-                        }, false)
+
+                            e.preventDefault()
+                            e.stopPropagation()
+
+                            formObj.action = "/todo/modify"
+                            formObj.method = "post"
+
+                            formObj.submit()
+                        }, false);
 
                         document.querySelector(".btn-secondary").addEventListener("click", function (e) {
-                            self.location = "todo/list";
-                        }, false)
+                            self.location = "/todo/list";
+                        }, false);
                     </script>
                 </div>
             </div>
