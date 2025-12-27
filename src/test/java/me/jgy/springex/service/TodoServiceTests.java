@@ -1,6 +1,8 @@
 package me.jgy.springex.service;
 
 import lombok.extern.log4j.Log4j2;
+import me.jgy.springex.dto.PageRequestDTO;
+import me.jgy.springex.dto.PageResponseDTO;
 import me.jgy.springex.dto.TodoDTO;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,5 +29,15 @@ public class TodoServiceTests {
                 .build();
 
         todoService.register(todoDTO);
+    }
+
+    @Test
+    public void testPaging() {
+        PageRequestDTO pageRequestDTO = PageRequestDTO.builder().page(1).size(10).build();
+        PageResponseDTO<TodoDTO> responseDTO = todoService.getList(pageRequestDTO);
+
+        log.info(responseDTO);
+
+        responseDTO.getDtoList().stream().forEach(todoDTO -> log.info(todoDTO));
     }
 }
