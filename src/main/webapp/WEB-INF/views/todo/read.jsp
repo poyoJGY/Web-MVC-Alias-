@@ -94,6 +94,10 @@
                             }, false)
 
                             document.querySelector(".btn-secondary").addEventListener("click", function(e) {
+
+                                e.preventDefault()
+                                e.stopPropagation()
+
                                 self.location = "/todo/list?${pageRequestDTO.link}";
                             }, false)
                         </script>
